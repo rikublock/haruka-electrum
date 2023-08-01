@@ -224,6 +224,10 @@ export class ElectrumClient extends Client {
         return this.request('blockchain.scripthash.subscribe', [scripthash])
     }
 
+    blockchainScripthash_unsubscribe(scripthash: string) {
+        return this.request('blockchain.scripthash.unsubscribe', [scripthash])
+    }
+
     blockchainBlock_getHeader(height: number) {
         return this.request('blockchain.block.get_header', [height])
     }
