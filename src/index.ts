@@ -1,4 +1,4 @@
-import {Client} from './lib/client.js'
+import {Client} from './lib/client'
 import {
     Callbacks,
     ElectrumConfig,

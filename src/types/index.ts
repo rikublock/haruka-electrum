@@ -1,4 +1,4 @@
-import {ElectrumClient} from '../index.js'
+import {ElectrumClient} from '../index'
 
 export type Protocol = 'tcp' | 'tls' | 'ssl';
 
