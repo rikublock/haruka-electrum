@@ -12,7 +12,7 @@ export abstract class Client {
     private port: number
     private host: string
     private callback_message_queue: Map<number, (err: Error | null, result?: any) => void>
-    protected subscribe: EventEmitter
+    public subscribe: EventEmitter
     private mp: util.MessageParser
     private conn: net.Socket | TlsSocketWrapper | null
     private status: number
