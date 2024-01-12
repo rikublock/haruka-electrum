@@ -24,3 +24,17 @@ export type ElectrumConfig = {
 export type ElectrumRequestParams = Array<number | string | boolean | Array<any>>;
 
 export type ElectrumRequestBatchParams = number | string | boolean | undefined;
+
+export type HexString = string;
+
+export type Balance = {
+    confirmed: number;
+    unconfirmed: number;
+};
+
+export type Unspent = {
+    height: number;
+    tx_hash: string;
+    tx_pos: number;
+    value: number;
+};

@@ -1,11 +1,14 @@
 import {Client} from './lib/client'
 import {
+    Balance,
     Callbacks,
     ElectrumConfig,
     ElectrumRequestBatchParams,
     ElectrumRequestParams,
+    HexString,
     PersistencePolicy,
-    Protocol
+    Protocol,
+    Unspent
 } from './types'
 
 export class ElectrumClient extends Client {
@@ -192,8 +195,8 @@ export class ElectrumClient extends Client {
         return this.request('blockchain.address.get_proof', [address])
     }
 
-    blockchainScripthash_getBalance(scripthash: string) {
-        return this.request('blockchain.scripthash.get_balance', [scripthash])
+    public async blockchainScripthash_getBalance(scripthash: string): Promise<Balance> {
+        return this.request('blockchain.scripthash.get_balance', [scripthash]) as Promise<Balance>
     }
 
     blockchainScripthash_getBalanceBatch(scripthashes: string[]) {
@@ -216,8 +219,8 @@ export class ElectrumClient extends Client {
         return this.request('blockchain.scripthash.get_mempool', [scripthash])
     }
 
-    blockchainScripthash_listunspent(scripthash: string) {
-        return this.request('blockchain.scripthash.listunspent', [scripthash])
+    public async blockchainScripthash_listunspent(scripthash: string): Promise<Unspent[]> {
+        return this.request('blockchain.scripthash.listunspent', [scripthash]) as Promise<Unspent[]>
     }
 
     blockchainScripthash_subscribe(scripthash: string) {
@@ -228,8 +231,8 @@ export class ElectrumClient extends Client {
         return this.request('blockchain.scripthash.unsubscribe', [scripthash])
     }
 
-    blockchainBlock_getHeader(height: number) {
-        return this.request('blockchain.block.get_header', [height])
+    public async blockchainBlock_header(height: number): Promise<HexString> {
+        return this.request('blockchain.block.header', [height]) as Promise<HexString>
     }
 
     blockchainBlock_headers(start_height: number, count: number) {
