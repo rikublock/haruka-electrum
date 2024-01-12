@@ -1,6 +1,6 @@
 {
-  "name": "@haruka/electrum",
-  "version": "1.4.0",
+  "name": "@harukawallet/electrum-client",
+  "version": "1.4.1",
   "engines": {
     "node": ">=14.0.0"
   },
